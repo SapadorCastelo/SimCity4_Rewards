@@ -1,0 +1,856 @@
+<html><head>
+<style><!--
+body {
+    background-color: darkslategray;
+    background-image: linear-gradient(lightslategray, darkslategray);
+    background-attachment: fixed;
+}
+article {
+    width: fit-content;
+    margin: 3em auto;
+    border: #f2fcff solid 5px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 10px;
+}
+table {
+    border-collapse: collapse;
+    color: #333;
+    font-size: 11pt;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+}
+td {
+    padding: 4px 7.5px;
+    white-space: nowrap;
+    text-align:center;
+}
+.tTit {
+    font-size:14pt;
+    font-weight:700;
+    background:#ACB9CA;
+}
+.sTit {
+    background:#ACB9CA;
+}
+.tTit:nth-of-type(2),
+.tTit:nth-of-type(3),
+.sTit:nth-of-type(1),
+.sTit:nth-of-type(5) {
+    border-left: #9aa9bd solid 1px;
+}
+tr + tr + tr > td:nth-of-type(1) {
+    text-align: start;
+}
+tr + tr + tr > td:nth-of-type(2),
+tr + tr + tr > td:nth-of-type(6) {
+    border-left: #F2F2F2 solid 1px;
+}
+.norL {
+    background:#F2F2F2;
+}
+.norD {
+    background:#D6DCE4;
+}
+.posL {
+    color:#00B050;
+	background:#F2F2F2;
+}
+.posD {
+    color:#00B050;
+    background:#D6DCE4;
+}
+.negL {
+    color:#C00000;
+    background:#F2F2F2;
+}
+.negD {
+    color:#C00000;
+    background:#D6DCE4;
+}
+-->
+</style>
+</head>
+<body>
+<article>
+<table border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td rowspan="2" class="tTit">Reward</td>
+  <td colspan="4" class="tTit">YIMBY/NIMBY Effect</td>
+  <td colspan="7" class="tTit">Population Cap Relief</td>
+ </tr>
+ <tr>
+  <td class="sTit">R+/-</td>
+  <td class="sTit">R Range</td>
+  <td class="sTit">C+/-</td>
+  <td class="sTit">C Range</td>
+  <td class="sTit">R§</td>
+  <td class="sTit">R§§</td>
+  <td class="sTit">R§§§</td>
+  <td class="sTit">CO§§</td>
+  <td class="sTit">CO§§§</td>
+  <td class="sTit">IM</td>
+  <td class="sTit">IHT</td>
+ </tr>
+ <tr>
+  <td class="norL">Advanced Research Center</td>
+  <td class="negL">-50</td>
+  <td class="norL">22</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">150k</td>
+ </tr>
+ <tr>
+  <td class="norD">Air Force Base</td>
+  <td class="negD">-90</td>
+  <td class="norD">36</td>
+  <td class="posD">20</td>
+  <td class="norD">9</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Area 5.1</td>
+  <td class="negL">-90</td>
+  <td class="norL">36</td>
+  <td class="negL">-80</td>
+  <td class="norL">30</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">100k</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Army Base</td>
+  <td class="negD">-90</td>
+  <td class="norD">30</td>
+  <td class="posD">25</td>
+  <td class="norD">9</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">100k</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Bureau of Bureaucracy</td>
+  <td class="negL">-50</td>
+  <td class="norL">22</td>
+  <td class="posL">25</td>
+  <td class="norL">17</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Casino</td>
+  <td class="negD">-65</td>
+  <td class="norD">25</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Cemetery (1, 2 and 3)</td>
+  <td class="posL">40</td>
+  <td class="norL">20</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">City Hall</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">City Zoo</td>
+  <td class="posL">25</td>
+  <td class="norL">17</td>
+  <td class="posL">50</td>
+  <td class="norL">14</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Convention Center</td>
+  <td class="negD">-50</td>
+  <td class="norD">22</td>
+  <td class="posD">100</td>
+  <td class="norD">32</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">100k</td>
+  <td class="norD">100k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Country Club</td>
+  <td class="posL">75</td>
+  <td class="norL">27</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">8k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Courthouse</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="posD">70</td>
+  <td class="norD">26</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">5k</td>
+  <td class="norD">20k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Cruise Ship Port<span style="mso-spacerun:yes">&nbsp;</span></td>
+  <td class="posL">60</td>
+  <td class="norL">24</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Deluxe Police Station</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Disease Research Center</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="posL">40</td>
+  <td class="norL">20</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Farmer's Market</td>
+  <td class="posD">75</td>
+  <td class="norD">27</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">20k</td>
+  <td class="norD">150k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Federal Prison</td>
+  <td class="negL">-90</td>
+  <td class="norL">30</td>
+  <td class="negL">-70</td>
+  <td class="norL">26</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Fire Dept. Landing Strip</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Grand Railroad Station</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">House of Worship 1</td>
+  <td class="posD">70</td>
+  <td class="norD">26</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">House of Worship 2</td>
+  <td class="posD">80</td>
+  <td class="norD">28</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">House of Worship 3</td>
+  <td class="posD">90</td>
+  <td class="norD">30</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">House of Worship 4</td>
+  <td class="posD">100</td>
+  <td class="norD">48</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Hydrogen Power Plant</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Large Elementary School</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Large Water Pump</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Lighthouse</td>
+  <td class="negD">-50</td>
+  <td class="norD">22</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Main Library</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Major Art Museum</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="posD">70</td>
+  <td class="norD">26</td>
+  <td class="norD">-</td>
+  <td class="norD">6k</td>
+  <td class="norD">6k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Marina</td>
+  <td class="posL">25</td>
+  <td class="norL">22</td>
+  <td class="posL">15</td>
+  <td class="norL">12</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Minor League Stadium</td>
+  <td class="negD">-20</td>
+  <td class="norD">16</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">200k</td>
+  <td class="norD">200k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Major League Stadium</td>
+  <td class="negD">-50</td>
+  <td class="norD">20</td>
+  <td class="posD">75</td>
+  <td class="norD">27</td>
+  <td class="norD">300k</td>
+  <td class="norD">300k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Mayor's House</td>
+  <td class="posL">100</td>
+  <td class="norL">48</td>
+  <td class="posL">100</td>
+  <td class="norL">48</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Mayor's Statue</td>
+  <td class="posD">25</td>
+  <td class="norD">17</td>
+  <td class="posD">25</td>
+  <td class="norD">17</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Impressive Mayor's Statue</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="posD">50</td>
+  <td class="norD">14</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Magnificent Mayor's
+  Statue</td>
+  <td class="posD">75</td>
+  <td class="norD">27</td>
+  <td class="posD">75</td>
+  <td class="norD">27</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Colossal Mayor's Statue</td>
+  <td class="posD">100</td>
+  <td class="norD">48</td>
+  <td class="posD">100</td>
+  <td class="norD">48</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Missile Range</td>
+  <td class="negL">-100</td>
+  <td class="norL">48</td>
+  <td class="negL">-50</td>
+  <td class="norL">22</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Movie Studio</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="posD">50</td>
+  <td class="norD">14</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Nuclear Power Plant</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Opera House</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">5k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Private School 1</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">6k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Private School 2</td>
+  <td class="posL">60</td>
+  <td class="norL">24</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">6k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Private School 3</td>
+  <td class="posL">70</td>
+  <td class="norL">26</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">6k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Radio Station</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="posD">25</td>
+  <td class="norD">17</td>
+  <td class="norD">-</td>
+  <td class="norD">9k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">9k</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Resort Hotel</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="posL">25</td>
+  <td class="norL">17</td>
+  <td class="norL">-</td>
+  <td class="norL">5k</td>
+  <td class="norL">5k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Solar Power Plant</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Space Port</td>
+  <td class="negL">-50</td>
+  <td class="norL">22</td>
+  <td class="posL">25</td>
+  <td class="norL">17</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">State Fair</td>
+  <td class="negD">-25</td>
+  <td class="norD">17</td>
+  <td class="posD">50</td>
+  <td class="norD">14</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Stock Exchange</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="posL">70</td>
+  <td class="norL">26</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">125k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Television Studio</td>
+  <td class="negD">-25</td>
+  <td class="norD">17</td>
+  <td class="posD">50</td>
+  <td class="norD">22</td>
+  <td class="norD">-</td>
+  <td class="norD">3k</td>
+  <td class="norD">-</td>
+  <td class="norD">10k</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">Tourist Trap</td>
+  <td class="negL">-25</td>
+  <td class="norL">17</td>
+  <td class="posL">50</td>
+  <td class="norL">36</td>
+  <td class="norL">100k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+ </tr>
+ <tr>
+  <td class="norD">Toxic Waste Dump</td>
+  <td class="negD">-100</td>
+  <td class="norD">48</td>
+  <td class="negD">-60</td>
+  <td class="norD">24</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+  <td class="norD">-</td>
+ </tr>
+ <tr>
+  <td class="norL">University</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="posL">50</td>
+  <td class="norL">22</td>
+  <td class="norL">-</td>
+  <td class="norL">15k</td>
+  <td class="norL">15k</td>
+  <td class="norL">15k</td>
+  <td class="norL">-</td>
+  <td class="norL">-</td>
+  <td class="norL">100k</td>
+ </tr>
+</tbody>
+</table>
+</article>
+</body></html>
